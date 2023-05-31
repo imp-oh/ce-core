@@ -3,8 +3,7 @@ const is = require("electron-is")
 const DefaultConfig = require('./env/env.default')
 const DevelopmentConfig = require('./env/env.development')
 const ProductionConfig = require('./env/env.production')
-const path = require('path')
-const log = require('electron-log')
+
 const getConfig = (appEnv) => {
   const { argv } = process
   let defaultConfig = new DefaultConfig().getOptions()

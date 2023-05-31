@@ -1,10 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
-const is = require("electron-is")
 const isType = require('is-type-of')
-const fs = require('fs')
-const path = require('path')
+
 const CeApp = require('./CeApp')
-const pkg = require('../../package.json')
 const getConfig = require('./Env')
 
 // 解决webpack打包不能使用require问题

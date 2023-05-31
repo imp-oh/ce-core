@@ -1,7 +1,6 @@
 /**
  * 小程序默认开发环境
  */
-const log = require('electron-log')
 class DevelopmentConfig {
   options = {}
   constructor () {

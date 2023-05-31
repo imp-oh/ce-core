@@ -2,7 +2,6 @@
  * 小程序默认生产环境
  */
 
-const log = require('electron-log')
 
 class ProductionConfig {
   options = {}

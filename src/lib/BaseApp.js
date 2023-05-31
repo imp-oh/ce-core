@@ -1,6 +1,4 @@
 
-let path = require('path')
-let { app } = require('electron')
 
 const AppLoader = require('./Application');
 

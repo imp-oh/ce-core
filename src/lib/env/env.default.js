@@ -4,7 +4,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 let path = require('path')
 const is = require("electron-is")
-const log = require('electron-log')
 const __require = typeof __webpack_require__ === 'function' ? __non_webpack_require__ : require
 
 class DefaultConfig {
