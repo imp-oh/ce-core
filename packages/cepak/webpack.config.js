@@ -29,10 +29,10 @@ let config = {
   },
   context: path.resolve(__dirname),
   entry: {
-    main: "./index.js"
+    main: "./src/index.js"
   },
   output: {
-    filename: "[name].js",
+    filename: "index.js",
     path: path.resolve(__dirname, './dist')
   },
   optimization: {

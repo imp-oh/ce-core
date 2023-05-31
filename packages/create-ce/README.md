@@ -5,7 +5,11 @@
 此框架还在升级中，兼容electron ，支持win 。
 1.0.4 版本新增适配小程序跟electron应用程序小程序 跟 electron应用 可以共用一个 ce-core 依赖
 
-# 小程序框架启动DOM整在制作中。。
+# 小程序启动实现案例
+[code-engine](https://github.com/impohcom/code-engine)
+code-engine 是利用electron框架，通过 process.argv 获取appid，来切换不同的小程序。
+https://github.com/impohcom/code-engine
+
 
 
 #  模块更新记录

@@ -1,6 +1,6 @@
 {
   "name": "cepkg",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "ce build exe",
   "main": "index.js",
   "author": "impoh",
@@ -19,6 +19,10 @@
     "pkg": "pkg -t win package.json",
     "build:webpack": "webpack --config webpack.config.js"
   },
+  "files": [
+    "index.js",
+    "dist"
+  ],
   "license": "MIT",
   "devDependencies": {
     "adm-zip": "^0.5.9",
@@ -35,5 +39,11 @@
   },
   "dependencies": {
     "cross-spawn": "^7.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/impohcom/ce-core.git",
+    "directory": "packages/cepak"
+  },
+  "homepage": "https://github.com/impohcom/ce-core/tree/main/packages/cepak"
 }

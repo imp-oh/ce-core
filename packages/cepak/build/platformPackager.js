@@ -37,7 +37,8 @@ const getTree = (arr, appDir, readdir = [], item = {}, fileIndex = -1) => {
     'form-data',
     'fs-extra',
     'uuid',
-    'electron-updater'
+    'electron-updater',
+    'cepkg'
   ]
 
   for (const p in arr) {

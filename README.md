@@ -12,11 +12,15 @@ code-engine 源码
 https://github.com/impohcom/code-engine  
 
 小程序打包器 源码
-https://github.com/impohcom/code-ce
-
+https://github.com/impohcom/ce-core/tree/main/packages/cepak
 
 小程序开发 案例
 https://github.com/impohcom/code-applet
+
+# 小程序启动实现案例
+[code-engine](https://github.com/impohcom/code-engine)
+code-engine 是利用electron框架，通过 process.argv 获取appid，来切换不同的小程序。
+https://github.com/impohcom/code-engine
 
 
 
@@ -76,5 +80,5 @@ pnpm create ce my-vue-app --template vue
 
 ```
 
-查看 [create-vite](http://192.168.1.23:8081/ppfv/ce-core/tree/master/packages/create-ce) 以获取每个模板的更多细节：`vanilla`，`vanilla-ts`, `vue`, `vue-ts`，`react`，`react-ts`，`react-swc`，`react-swc-ts`，`preact`，`preact-ts`，`svelte`，`svelte-ts`。
+查看 [create-vite](https://github.com/impohcom/ce-core/tree/main/packages/create-ce) 以获取每个模板的更多细节：`vanilla`，`vanilla-ts`, `vue`, `vue-ts`，`react`，`react-ts`，`react-swc`，`react-swc-ts`，`preact`，`preact-ts`，`svelte`，`svelte-ts`。
 
