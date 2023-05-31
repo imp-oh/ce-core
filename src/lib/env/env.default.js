@@ -45,7 +45,6 @@ class DefaultConfig {
     }
 
 
-
     /* 获取小程序环境设置 */
     let envOptions = {
       CE_APP_DIR: env.CE_APP_DIR,

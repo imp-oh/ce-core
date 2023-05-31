@@ -28,6 +28,7 @@ const getConfig = (appEnv) => {
   }
 
 
+
   // 环境配置
   let newConfig = {}
   for (let i = 0; i < process.argv.length; i++) {
