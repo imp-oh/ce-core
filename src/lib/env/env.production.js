@@ -16,6 +16,8 @@ class ProductionConfig {
       APP_ENV: 'prod',
       APP_FILE_DIR: env.CE_FILE_DIR
     }
+
+    console.log('========production==========')
     if (env.CE_APP_DIR) this.options.APP_HOME_DIR = env.CE_APP_DIR
 
     let keys = Object.getOwnPropertyNames(this.options)
