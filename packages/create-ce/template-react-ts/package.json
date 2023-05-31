@@ -104,7 +104,8 @@
 		"electron": "13.6.9"
 	},
 	"dependencies": {
-		"ce-core": "^1.1.4",
+		"ce-core": "^1.1.9",
+		"electron-is": "^3.0.0",
 		"electron-log": "^4.4.8"
 	}
 }
