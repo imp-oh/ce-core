@@ -11,6 +11,7 @@
 		"dev:electron": "chcp 65001 && electron . --env=dev",
 		"dev:vite": "cd ./renderer && pnpm dev",
 		"build:vite": "cd ./renderer && pnpm build",
+		"build:ce":"ce build",
 		"dev:mac": "electron . --env=dev",
 		"start": "electron . ",
 		"reload": "nodemon --config ./electron/config/nodemon.json",
