@@ -73,7 +73,7 @@ class CeApp extends BaseApp {
   async createElectronApp () {
     const self = this
 
-    app.on('second-instance', (event) => {
+    app.on('  ', (event) => {
       self.restoreMainWindow()
     })
 
