@@ -1,0 +1,111 @@
+{
+	"name": "vue",
+	"version": "0.0.1",
+	"shortcutName": "",
+	"description": "",
+	"main": "index.js",
+	"appid": "cefdw1sdxnohlnx7j9",
+	"author": "",
+	"license": "MIT",
+	"scripts": {
+		"dev:electron": "chcp 65001 && electron . --env=dev",
+		"dev:vite": "cd ./renderer && pnpm dev",
+		"build:vite": "cd ./renderer && pnpm build",
+		"build:ce":"ce build",
+		"dev:mac": "electron . --env=dev",
+		"start": "electron . ",
+		"reload": "nodemon --config ./electron/config/nodemon.json",
+		"test": "set DEBUG=* && electron . --env=local",
+		"npm": "npm run build",
+		"build": "electron-builder --ia32",
+		"build-w": "electron-builder -w=nsis --ia32",
+		"build-w-64": "electron-builder -w=nsis --x64",
+		"build-w-arm64": "electron-builder -w=nsis --arm64",
+		"build-wz": "electron-builder -w=7z --ia32",
+		"build-wz-64": "electron-builder -w=7z --x64",
+		"build-wz-arm64": "electron-builder -w=7z --arm64",
+		"build-m": "electron-builder -m",
+		"build-m-arm64": "electron-builder -m --arm64",
+		"build-l": "electron-builder -l=deb --ia32",
+		"build-l-64": "electron-builder -l=deb --x64",
+		"build-l-arm64": "electron-builder -l=deb --arm64",
+		"build-l-armv7l": "electron-builder -l=deb --armv7l",
+		"build-lr-64": "electron-builder -l=rpm --x64",
+		"build-lp-64": "electron-builder -l=pacman --x64"
+	},
+	"keywords": [],
+	"build": {
+		"asar": false,
+		"buildDependenciesFromSource": true,
+		"productName": "CodeEngine",
+		"appId": "top.codeengine.www",
+		"copyright": "ghost",
+		"directories": {
+			"output": "release"
+		},
+		"files": [
+			"**/*",
+			"!**/renderer",
+			"!**/pnpm-lock.yaml",
+			"!**/ce.config.dev.js",
+			"!**/CodeEngineModules"
+		],
+		"electronDownload": {
+			"mirror": "https://npmmirror.com/mirrors/electron/"
+		},
+		"nsis": {
+			"oneClick": false,
+			"allowElevation": true,
+			"allowToChangeInstallationDirectory": true,
+			"installerIcon": "./build/icons/icon.ico",
+			"uninstallerIcon": "./build/icons/icon.ico",
+			"installerHeaderIcon": "./build/icons/icon.ico",
+			"createDesktopShortcut": true,
+			"createStartMenuShortcut": true,
+			"shortcutName": "CodeEngine"
+		},
+		"publish": [
+			{
+				"provider": "generic",
+				"url": "https://www.gitce.top/updater"
+			}
+		],
+		"mac": {
+			"icon": "./build/icons/icon.icns",
+			"artifactName": "${productName}-${os}-${version}-${arch}.${ext}",
+			"target": [
+				"dmg"
+			]
+		},
+		"win": {
+			"artifactName": "${productName}-${os}-${version}-${arch}.${ext}",
+			"publisherName": "Code Chen",
+			"icon": "./build/icons/icon.ico",
+			"target": [
+				"nsis"
+			],
+			"signingHashAlgorithms": [
+				"sha1"
+			],
+			"signDlls": true,
+			"rfc3161TimeStampServer": "http://timestamp.globalsign.com/scripts/timestamp.dll",
+			"certificatePassword": ""
+		},
+		"linux": {
+			"icon": "./build/icons/icon.icns",
+			"artifactName": "${productName}-${os}-${version}-${arch}.${ext}",
+			"target": [
+				"deb"
+			],
+			"category": "Utility"
+		}
+	},
+	"devDependencies": {
+		"electron": "13.6.9"
+	},
+	"dependencies": {
+		"ce-core": "^1.1.9",
+		"electron-is": "^3.0.0",
+		"electron-log": "^4.4.8"
+	}
+}

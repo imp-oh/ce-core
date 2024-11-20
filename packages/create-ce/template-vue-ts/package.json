@@ -1,0 +1,43 @@
+{
+  "name": "home",
+  "main": "./out/index.js",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "tsc && chcp 65001 && ce . -launch_type=applet",
+    "build": "tsc",
+    "build:ce": "cehub-builder build",
+    "dev:vite": "vite",
+    "build:vite": "vite build",
+    "build:vite1": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "cehub": "link:E:/Hui/Github/ce-hub/cehub/src/typings/cehub",
+    "cehub-builder": "^0.0.3",
+    "sass": "^1.77.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vue-tsc": "^2.0.6"
+  },
+  "build": {
+    "appId": "home"
+  },
+  "manifest": {
+    "manifest_version": 3,
+    "name": "cehub-extensions",
+    "version": "1.0.0",
+    "description": "",
+    "main": {
+      "load": "http://localhost:5173",
+      "load1": "./out/renderer/index.html",
+      "width": 1200,
+      "height": 700,
+      "target": true
+    }
+  }
+}

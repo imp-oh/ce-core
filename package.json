@@ -1,0 +1,30 @@
+{
+  "name": "ce-core",
+  "version": "1.1.9",
+  "description": "ce core",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "impoh",
+	"license": "MIT",
+  "dependencies": {
+    "electron-is": "^3.0.0",
+    "is-type-of": "^1.2.1"
+  },
+  "devDependencies": {
+    "electron-log": "^4.4.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/impohcom/ce-core.git"
+  },
+  "homepage": "https://github.com/impohcom/ce-core",
+  "files": [
+    ".npmrc",
+    "package.json",
+    "index.js",
+    "src"
+  ]
+}

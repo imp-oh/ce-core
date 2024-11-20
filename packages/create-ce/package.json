@@ -1,0 +1,41 @@
+{
+  "name": "create-ce",
+  "version": "0.2.3",
+  "type": "module",
+  "license": "MIT",
+  "author": "impoh",
+  "bin": {
+    "create-ce": "index.js",
+    "cva": "index.js"
+  },
+  "files": [
+    "index.js",
+    "template-*",
+    "dist"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/impohcom/ce-core.git",
+    "directory": "packages/create-ce"
+  },
+  "bugs": {
+    "url": "https://github.com/impohcom/ce-core/issues"
+  },
+  "homepage": "https://github.com/impohcom/ce-core/tree/main/packages/create-ce",
+  "devDependencies": {
+    "cross-spawn": "^7.0.3",
+    "kolorist": "^1.6.0",
+    "minimist": "^1.2.7",
+    "prompts": "^2.4.2",
+    "unbuild": "^1.0.2"
+  }
+}

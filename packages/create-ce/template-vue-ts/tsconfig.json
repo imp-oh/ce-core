@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "noEmitOnError": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "commonjs",
+    // "noImplicitAny": false,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "alwaysStrict": false,
+    "strict": true, // 严格检查的总开关
+    // "composite": true,
+    // "noUnusedLocals": false,
+    // "noUnusedParameters": false,
+    "allowJs": true, // 允许编译 JavaScript 文件
+    "outDir": "./out",
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "types": ["node"],
+    "paths": {
+      "@/*": ["./renderer/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": []
+}
