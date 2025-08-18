@@ -6,19 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script>
-    const Module = require('module').Module
-    const old_findPath = Module._findPath
-    const { APP_NODE_MODULES } = process.env
-    Module._findPath = function (request, paths, isMain) {
-      paths.push(APP_NODE_MODULES)
-      return old_findPath(request, paths, isMain)
-    }
-  </script>
 </head>
 
 <body>
-  欢迎使用 CodeEngine 小程序
+  欢迎使用 CodeEngine 小程序, v3版本
 </body>
 
 </html>

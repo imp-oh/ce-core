@@ -1,9 +1,10 @@
 {
 	"name": "cetest",
+	"load": "index.html",
+	"main": "index.js",
 	"version": "0.0.1",
 	"shortcutName": "",
 	"description": "",
-	"main": "index.js",
 	"appid": "ce7d0wkv1lzufqm4qc",
 	"author": "",
 	"license": "MIT",
