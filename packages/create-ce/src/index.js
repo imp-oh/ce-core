@@ -16,24 +16,23 @@ import {
   yellow,
 } from 'kolorist'
 
-
 const argv = minimist(process.argv.slice(2), { string: ['_'] })
 const cwd = process.cwd()
 
 const FRAMEWORKS = [
   {
-    name: 'vanilla',
-    display: 'Vanilla',
-    color: yellow,
+    name: 'ce',
+    display: 'Ce',
+    color: lightRed,
     variants: [
       {
-        name: 'vanilla',
+        name: 'ce',
         display: 'JavaScript',
         color: yellow,
       },
       {
-        name: 'vanilla-ts',
-        display: 'TypeScript',
+        name: 'ce-window',
+        display: 'JavaScript',
         color: blue,
       },
     ],
@@ -95,6 +94,23 @@ const FRAMEWORKS = [
     ],
   },
   {
+    name: 'vanilla',
+    display: 'Vanilla',
+    color: yellow,
+    variants: [
+      {
+        name: 'vanilla',
+        display: 'JavaScript',
+        color: yellow,
+      },
+      {
+        name: 'vanilla-ts',
+        display: 'TypeScript',
+        color: blue,
+      },
+    ],
+  },
+  {
     name: 'preact',
     display: 'Preact',
     color: magenta,
@@ -108,18 +124,6 @@ const FRAMEWORKS = [
         name: 'preact-ts',
         display: 'TypeScript',
         color: blue,
-      },
-    ],
-  },
-  {
-    name: 'ce',
-    display: 'Ce',
-    color: lightRed,
-    variants: [
-      {
-        name: 'ce',
-        display: 'JavaScript',
-        color: yellow,
       },
     ],
   },
@@ -179,21 +183,18 @@ const FRAMEWORKS = [
 ]
 
 const TEMPLATES = FRAMEWORKS.map(
-  (f) => (f.variants && f.variants.map((v) => v.name)) || [f.name],
+  (f) => (f.variants && f.variants.map((v) => v.name)) || [f.name]
 ).reduce((a, b) => a.concat(b), [])
-
 
 const renameFiles = {
   _gitignore: '.gitignore',
 }
 
-
 const defaultTargetDir = 'ce-project'
 
 const defaultAppid = `appid.codeengine.${uuid(10, 'ce')}`
 
-
-async function init () {
+async function init() {
   const argTargetDir = formatTargetDir(argv._[0])
   const argTemplate = argv.template || argv.t
 
@@ -249,8 +250,8 @@ async function init () {
           message:
             typeof argTemplate === 'string' && !TEMPLATES.includes(argTemplate)
               ? reset(
-                `"${argTemplate}" isn't a valid template. Please choose from below: `,
-              )
+                  `"${argTemplate}" isn't a valid template. Please choose from below: `
+                )
               : reset('Select a framework:'),
           initial: 0,
           choices: FRAMEWORKS.map((framework) => {
@@ -280,7 +281,7 @@ async function init () {
         onCancel: () => {
           throw new Error(red('✖') + ' Operation cancelled')
         },
-      },
+      }
     )
   } catch (cancelled) {
     console.log(cancelled.message)
@@ -290,7 +291,6 @@ async function init () {
   // user choice associated with prompts
   const { framework, overwrite, packageName, variant } = result
   const root = path.join(cwd, targetDir)
-
 
   if (overwrite) {
     emptyDir(root)
@@ -341,11 +341,10 @@ async function init () {
 
   console.log(`\nScaffolding project in ${root}...`)
 
-
   const templateDir = path.resolve(
     fileURLToPath(import.meta.url),
     '../..',
-    `template-${template}`,
+    `template-${template}`
   )
 
   const write = (file, content) => {
@@ -363,7 +362,7 @@ async function init () {
   }
 
   const pkg = JSON.parse(
-    fs.readFileSync(path.join(templateDir, `package.json`), 'utf-8'),
+    fs.readFileSync(path.join(templateDir, `package.json`), 'utf-8')
   )
 
   pkg.name = packageName || getProjectName()
@@ -392,9 +391,7 @@ async function init () {
   console.log()
 }
 
-
-
-function copy (src, dest) {
+function copy(src, dest) {
   const stat = fs.statSync(src)
   if (stat.isDirectory()) {
     copyDir(src, dest)
@@ -403,8 +400,7 @@ function copy (src, dest) {
   }
 }
 
-
-function copyDir (srcDir, destDir) {
+function copyDir(srcDir, destDir) {
   fs.mkdirSync(destDir, { recursive: true })
   for (const file of fs.readdirSync(srcDir)) {
     const srcFile = path.resolve(srcDir, file)
@@ -413,25 +409,22 @@ function copyDir (srcDir, destDir) {
   }
 }
 
-
-
-function formatTargetDir (targetDir) {
+function formatTargetDir(targetDir) {
   return targetDir?.trim().replace(/\/+$/g, '')
 }
 
-
-function isEmpty (path) {
+function isEmpty(path) {
   const files = fs.readdirSync(path)
   return files.length === 0 || (files.length === 1 && files[0] === '.git')
 }
 
-function isValidPackageName (projectName) {
+function isValidPackageName(projectName) {
   return /^(?:@[a-z\d\-*~][a-z\d\-*._~]*\/)?[a-z\d\-~][a-z\d\-._~]*$/.test(
-    projectName,
+    projectName
   )
 }
 
-function emptyDir (dir) {
+function emptyDir(dir) {
   if (!fs.existsSync(dir)) {
     return
   }
@@ -443,8 +436,7 @@ function emptyDir (dir) {
   }
 }
 
-
-function pkgFromUserAgent (userAgent) {
+function pkgFromUserAgent(userAgent) {
   if (!userAgent) return undefined
   const pkgSpec = userAgent.split(' ')[0]
   const pkgSpecArr = pkgSpec.split('/')
@@ -454,9 +446,7 @@ function pkgFromUserAgent (userAgent) {
   }
 }
 
-
-
-function uuid (len, prefix) {
+function uuid(len, prefix) {
   var chars = 'ab0cd1ef2gh3ij4kl5mn6op7qr8st9uvwxyz'.split('')
   var uuid = [],
     i
@@ -464,7 +454,7 @@ function uuid (len, prefix) {
 
   if (len) {
     // Compact form
-    for (i = 0; i < len; i++) uuid[i] = chars[0 | Math.random() * radix]
+    for (i = 0; i < len; i++) uuid[i] = chars[0 | (Math.random() * radix)]
   } else {
     // rfc4122, version 4 form
     var r
@@ -475,8 +465,8 @@ function uuid (len, prefix) {
     // per rfc4122, sec. 4.1.5
     for (i = 0; i < 36; i++) {
       if (!uuid[i]) {
-        r = 0 | Math.random() * 16
-        uuid[i] = chars[(i == 19) ? (r & 0x3) | 0x8 : r]
+        r = 0 | (Math.random() * 16)
+        uuid[i] = chars[i == 19 ? (r & 0x3) | 0x8 : r]
       }
     }
   }

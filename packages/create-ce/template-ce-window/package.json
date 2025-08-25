@@ -1,0 +1,25 @@
+{
+  "name": "cetest",
+  "load": "index.html",
+  "main": "index.js",
+  "version": "0.0.1",
+  "shortcutName": "",
+  "description": "",
+  "appId": "win",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "dev": "chcp 65001 && ce . launch_type=window",
+    "build": "cehub-builder build"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "cehub-builder": "link:E:/Hui/Github/ce-hub/cehub-builder"
+  },
+  "build": {
+    "asar": false
+  },
+  "windows":{
+    "type":"window"
+  }
+}
